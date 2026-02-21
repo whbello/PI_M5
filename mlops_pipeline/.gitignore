@@ -9,7 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
-develop-eggs/
+develop-eggs/", revisalo e indicame si esta bien 
 dist/
 downloads/
 eggs/
@@ -67,3 +67,36 @@ pdf_content.txt
 pptx_content.txt
 extract_pdf.py
 extract_pptx.py
+
+# ===============================
+# DATA SCIENCE / MLOPS
+# ===============================
+
+# Datasets
+data/
+src/data/
+**/data/interim/
+**/data/processed/
+**/data/raw/
+
+# Large data files
+*.csv
+*.parquet
+*.feather
+*.h5
+
+# Serialized objects / models
+*.pkl
+*.joblib
+*.sav
+
+# Model artifacts
+models/
+**/models/
+
+# Outputs
+outputs/
+logs/
+reports/
+
+# ===============================
