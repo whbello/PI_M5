@@ -98,7 +98,8 @@ print("="*80)
 
 # Definir rutas del proyecto
 # Toda la estructura está dentro de src/
-PROJECT_ROOT = Path.cwd()  # Estamos en mlops_pipeline/src/
+SCRIPT_DIR = Path(__file__).parent.resolve()  # Estamos en mlops_pipeline/src/
+PROJECT_ROOT = SCRIPT_DIR
 
 # Definir todas las rutas dentro de src/
 DATA_DIR = PROJECT_ROOT / 'data'
@@ -1191,14 +1192,4 @@ print("\n" + "="*80)
 
 
 
-#from fastapi import FastAPI
-#import uvicorn
 
-#app = FastAPI()
-
-#@app.get("/")
-#def read_root():
-#    return {"message": "Model Deployment API"}
-
-#if __name__ == "__main__":
-#    uvicorn.run(app, host="0.0.0.0", port=8000)
