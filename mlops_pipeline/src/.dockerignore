@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+.Python
+venv/
+env/
+
+# Data
+data/
+*.csv
+*.xlsx
+
+# Jupyter
+*.ipynb
+.ipynb_checkpoints/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Documentación
+*.md
+docs/
+
+# Reports
+reports/
+
+# Tests
+tests/
+test_*.py
+
+# Modelos antiguos (solo mantener el final)
+models/modelo_final_baseline*.pkl
+models/modelo_final_logistic*.pkl
+models/modelo_final_decision*.pkl
+# Mantener solo el mejor modelo

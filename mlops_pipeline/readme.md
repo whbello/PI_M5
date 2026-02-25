@@ -66,13 +66,13 @@ Desarrollar un **sistema de ML end-to-end** que:
 │         └─ Detección de multicolinealidad                 │
 │                                                             │
 │  3. FEATURE ENGINEERING                                     │
-│     └─→ 03_ft_engineering.ipynb                            │
+│     └─→ ft_engineering.ipynb                            │
 │         ├─ Creación de features derivados                  │
 │         ├─ Pipelines de transformación                     │
 │         └─ Balanceo con SMOTE                              │
 │                                                             │
 │  4. MODELAMIENTO                                            │
-│     └─→ 04_model_training_evaluation.ipynb                 │
+│     └─→ model_training_evaluation.ipynb                 │
 │         ├─ Entrenamiento de 6 modelos                      │
 │         ├─ Evaluación con métricas apropiadas             │
 │         └─ Selección del mejor modelo                      │
@@ -147,7 +147,7 @@ Clase 0 (No pagó):    511 clientes ( 4.75%) █
 - ❌ Sin técnicas de balanceo, el modelo ignora la clase minoritaria
 - **Solución:** SMOTE aplicado en entrenamiento
 
-### 2. 📊 Variables Más Predictivas
+### 2. Variables Más Predictivas
 
 Identificadas mediante análisis bivariado con tests estadísticos:
 
@@ -159,7 +159,7 @@ Identificadas mediante análisis bivariado con tests estadísticos:
 | `capital_prestado` | t-test | < 0.01 | ⭐⭐ Media |
 | `edad_cliente` | t-test | < 0.05 | ⭐ Baja |
 
-### 3. 🔗 Multicolinealidad Detectada
+### 3. Multicolinealidad Detectada
 
 Variables altamente correlacionadas (|r| > 0.8):
 - `capital_prestado` ↔ `cuota_pactada` (r = 0.92)
@@ -246,9 +246,9 @@ Real  No Pagó    TN       FP
 
 ### Interpretación de Negocio
 
-De **XXX clientes que NO pagaron** en el conjunto de prueba:
-- 🟢 **XX detectados** (TN): Pérdida evitada
-- 🔴 **XX no detectados** (FN): Pérdida real
+De **0 clientes que NO pagaron** en el conjunto de prueba:
+- 🟢 **2051 detectados** (TN): Pérdida evitada
+- 🔴 **0 no detectados** (FN): Pérdida real
 
 **Mejora vs Baseline:**
 - Baseline detecta: 0% de impagos
@@ -257,7 +257,7 @@ De **XXX clientes que NO pagaron** en el conjunto de prueba:
 
 ### Top 5 Features Más Importantes
 
-1.  `puntaje_datacredito` (importancia: 0.000)
+1.  `puntaje_datacredito` (importancia: 1.000)
 2.  `saldo_mora` (importancia: 0.000)
 3.  `ratio_cuota_salario` (importancia: 0.000)
 4.  `edad_cliente` (importancia: 0.000)
@@ -457,7 +457,7 @@ PI_M5/mlops_pipeline/
 │   │       └── baseline_stats.pkl
 │   │
 │   ├── models/                           # Modelos entrenados
-│   │   ├── modelo_final_*.pkl
+│   │   ├── modelo_final_decision_tree.pkl
 │   │   ├── pipeline_transformacion.pkl
 │   │   ├── metricas_comparacion.csv
 │   │   └── resumen_modelo.json
@@ -465,20 +465,20 @@ PI_M5/mlops_pipeline/
 │   ├── reports/                          # Reportes y figuras
 │   │   └── figures/
 │   │       ├── comparacion_modelos.png
-│   │       ├── confusion_matrix_*.png
-│   │       ├── feature_importance_*.png
+│   │       ├── confusion_matrix_decision_tree.png
+│   │       ├── feature_importance_decision_tree.png
 │   │       └── curvas_evaluacion.png
 │   │
 │   ├── Cargar_datos.ipynb               # Notebook 1: Carga
 │   ├── comprension_eda.ipynb            # Notebook 2: EDA
-│   ├── 03_ft_engineering.ipynb          # Notebook 3: Features
-│   ├── 04_model_training_evaluation.ipynb  # Notebook 4: Modelos
+│   ├── ft_engineering.ipynb             # Notebook 3: Features
+│   ├── model_training_evaluation.ipynb  # Notebook 4: Modelos
 │   ├── model_monitoring.py              # Script: Monitoreo
 │   └── app_streamlit.py                 # App: Dashboard
 │
-├── .gitignore                            # Archivos ignorados
-├── requirements.txt                      # Dependencias
-└── README.md                             # Este archivo
+├── .gitignore                           # Archivos ignorados
+├── requirements.txt                     # Dependencias
+└── README.md                            # Este archivo
 ```
 
 ---
@@ -631,5 +631,8 @@ AHORRO ESTIMADO:                       $[511,000,000]
    - Modelos específicos por segmento
    - Personalización de umbrales
 
-
-
+---
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=whbello_PI_M5&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=whbello_PI_M5)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=whbello_PI_M5&metric=coverage)](https://sonarcloud.io/summary/new_code?id=whbello_PI_M5)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=whbello_PI_M5&metric=bugs)](https://sonarcloud.io/summary/new_code?id=whbello_PI_M5)
+---
