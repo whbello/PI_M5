@@ -587,7 +587,7 @@ for idx, metric in enumerate(metrics_to_plot):
     
     # Crear barras horizontales
     bars = ax.barh(range(len(models_list)), values, color=colors, 
-                   edgecolor='black', alpha=0.85, linewidth=1.5)
+                edgecolor='black', alpha=0.85, linewidth=1.5)
     
     ax.set_yticks(range(len(models_list)))
     ax.set_yticklabels(models_list, fontsize=10)
